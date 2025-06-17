@@ -63,3 +63,42 @@ SVMs Accuracy: ~0.60
 
 
 K-Nearest Neighbor Accuracy: ~0.60
+
+This project set out to develop a machine learning model capable of predicting the metastatic potential of colorectal tumors—specifically distinguishing between pathological stages I–II (non-metastatic) and III–IV (metastatic)—based solely on miRNA expression profiles. The motivation lies in the growing evidence that specific miRNAs play critical roles in cancer progression, including the regulation of epithelial–mesenchymal transition (EMT), which is closely linked to metastasis.
+
+To achieve this goal, the project followed a structured pipeline:
+
+Data Collection:
+Expression data of selected miRNAs related to tumor progression and EMT was retrieved from the NIH’s Genome Data Commons (GDC), using publicly available transcriptome profiles.
+
+Data Wrangling:
+The datasets were preprocessed to handle missing values and unified into a single, analysis-ready DataFrame. Additional miRNAs associated with E-cadherin deregulation were incorporated to enrich the feature space.
+
+Exploratory Data Analysis (EDA):
+Initial analyses helped uncover patterns, feature distributions, and potential outliers in both the original and newly added miRNA features.
+
+Outlier Handling:
+Several methods were implemented to improve data quality, including IQR-based filtering, Isolation Forest, DBSCAN, One-Class SVM, and capping-based transformations.
+
+Model Development and Evaluation:
+
+Baseline models (Logistic Regression, Support Vector Machines, and k-Nearest Neighbors) were trained using different outlier-handled datasets.
+
+Feature selection and transformations were applied to improve classifier performance.
+
+Hyperparameter tuning and cross-validation ensured better model generalization.
+
+Ensemble models (Random Forest and XGBoost) were then implemented, leveraging their robustness and superior performance in complex classification tasks.
+
+Despite the steps taken, model accuracy plateaued at moderate levels. This highlights a common limitation in relying solely on molecular features. For future improvement, incorporating clinical variables (e.g., tumor grade, lymph node involvement, patient demographics) alongside miRNA data is essential to build a more comprehensive and predictive model.
+
+Final Thoughts:
+Machine learning has enormous potential to enhance clinical decision-making by providing data-driven tools for early diagnosis, prognosis, and personalized treatment strategies. In this project, we explored how miRNA expression profiles, an increasingly accessible form of molecular data, could help predict cancer behavior in a non-invasive and scalable way.
+
+This work is a scientific proof of concept, and future iterations should aim to combine multi-omics and clinical datasets to reach clinically actionable accuracy levels.
+
+Disclaimer:
+
+All data used in this project is publicly available through the National Cancer Institute’s Genome Data Commons (GDC) and was accessed solely for scientific and educational purposes. No personal or sensitive information was used or disclosed.
+
+
