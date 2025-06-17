@@ -56,10 +56,10 @@ Random Forest Accuracy: ~0.65
 XGBoost Accuracy: ~0.60
 
 
-Logistic Regression Accuracy:
+Logistic Regression Accuracy: ~0.65
 
 
-SVMs Accuracy:
+SVMs Accuracy: ~0.60
 
 
-K-Nearest Neighbor Accuracy:
+K-Nearest Neighbor Accuracy: ~0.60
